@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Преподаватель английского и китайского</title>
+  <style>
+    :root{
+      --bg:#fff7ff; --accent:#ff6b6b; --accent-2:#ffd166; --card:#ffffffcc; --glass: rgba(255,255,255,0.6);
+      --shadow: 0 8px 30px rgba(0,0,0,0.12);
+      --radius:18px;
+      --nav-h:68px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(135deg,#ffe6f2 0%, #fff6d6 100%);color:#222;}
+    /* NAV */
+    header{position:fixed;top:0;left:0;right:0;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:10px 22px;background:linear-gradient(90deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));backdrop-filter:blur(6px);box-shadow:var(--shadow);z-index:999}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#ff8fa3);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    nav a{margin:0 8px;text-decoration:none;color:#2b2b2b;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:700}
+
+    main{padding-top:calc(var(--nav-h) + 22px);max-width:1100px;margin:0 auto}
+    .hero{display:grid;grid-template-columns:360px 1fr;gap:26px;align-items:center;padding:28px}
+    .card{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .photo{width:320px;height:320px;border-radius:16px;background:linear-gradient(180deg,#ffd8e2,#fff);display:flex;align-items:center;justify-content:center;font-size:18px;color:#333}
+    .info h1{margin:0;font-size:30px;color:#1b1b1b}
+    .info p{margin:8px 0 0}
+
+    /* courses row */
+    .courses{display:flex;gap:14px;margin:18px 0}
+    .course{flex:1;padding:12px;border-radius:12px;background:linear-gradient(180deg,#ffffffdd,#ffffffaa);display:flex;align-items:center;gap:12px}
+    .course .icon{font-size:28px}
+
+    /* slot machine */
+    .slot-wrap{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .slot{display:flex;gap:10px;background:linear-gradient(180deg,#fffbff,#fff);padding:14px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.08)}
+    .reel{width:84px;height:84px;border-radius:12px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-size:36px;border:3px solid rgba(255,255,255,0.6)}
+    .controls{display:flex;gap:10px;align-items:center}
+    button{cursor:pointer;border:0;padding:10px 14px;border-radius:10px;font-weight:700}
+    .play{background:linear-gradient(90deg,var(--accent),#ff8fa3);color:white}
+    .claim{background:linear-gradient(90deg,var(--accent-2),#ffd28a)}
+    .disabled{opacity:0.5;pointer-events:none}
+
+    /* sections */
+    section{padding:28px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .reviews{display:flex;flex-direction:column;gap:10px}
+    .review{background:rgba(255,255,255,0.7);padding:12px;border-radius:12px}
+
+    /* footer */
+    footer{padding:24px;text-align:center;color:#444}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .photo{width:100%;height:240px}
+      .grid-2{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">EС</div>
+      <div>
+        <div style="font-weight:800">Английский и китайский</div>
+        <div style="font-size:12px;color:#222b">Индивидуальные и групповые занятия для детей и подростков</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#about">Обо мне</a>
+      <a href="#courses">Курсы</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contact">Контакты</a>
+      <a class="cta" href="#signup">Записаться</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="card photo" id="about">
+        <!-- place for photo: replace src with your image or keep this placeholder -->
+        <img id="teacher-photo" src="elv.jpg" alt="Photo" style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none">
+        <div id="photo-placeholder" style="text-align:center;padding:18px">
+          <div style="font-size:42px">👩‍🏫</div>
+          <div style="margin-top:10px;font-weight:700">Добавьте фото преподавателя</div>
+        </div>
+      </div>
+
+      <div class="card info">
+        <h1>Обо мне</h1>
+        <p>Я - Эльвира Нурисламова, преподаватель английского и китайского с опытом более 15 лет. Мой подход в преподавании основан на практическом применении языка в реальных ситуациях. Я верю, что обучение должно быть интересным и результативным. Со мной вы не просто учите грамматику - вы обретаете уверенность и свободу общения на иностранном языке.</p>
+
+        <div class="courses" id="courses">
+          <div class="course"><div class="icon">🧒</div><div><strong>Начальная школа</strong><div style="font-size:13px">английский и китайский</div></div></div>
+          <div class="course"><div class="icon">🎒</div><div><strong>Средняя школа</strong><div style="font-size:13px">английский и китайский</div></div></div>
+          <div class="course"><div class="icon">📚</div><div><strong>Подготовка к экзаменам</strong><div style="font-size:13px">Cambridge, HSK</div></div></div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;gap:12px;align-items:center">
+          <a class="play" href="#slot">Попробовать слот и выиграть приз</a>
+          <a href="#contact" style="text-decoration:none;padding:10px 12px;border-radius:10px;background:#ffffffdd">Узнать расписание</a>
+        </div>
+
+        <div style="margin-top:18px;font-size:13px;color:#333b">Слот можно активировать только один раз с этого браузера.</div>
+      </div>
+    </section>
+
+    <section class="card" id="slot">
+      <h2 style="margin-top:0">Игровой слот — твой гарантированный приз 🎰</h2>
+      <div class="slot-wrap">
+        <div class="slot" aria-hidden="true">
+          <div class="reel" id="reel1">❓</div>
+          <div class="reel" id="reel2">❓</div>
+          <div class="reel" id="reel3">❓</div>
+        </div>
+
+        <div class="controls">
+          <button id="spinBtn" class="play">Играть</button>
+          <button id="claimBtn" class="claim disabled">Получить приз</button>
+        </div>
+
+        <div id="resultText" style="font-weight:800;margin-top:6px"></div>
+      </div>
+
+      <p style="margin-top:12px;font-size:13px;color:#333b">Символы — emoji. Слот всегда выигрывает: при любом раскладе вы получите один из пяти призов. Можно использовать только один раз.</p>
+    </section>
+
+    <section class="grid-2">
+      <div class="card reviews" id="reviews">
+        <h3>Отзывы</h3>
+        <div class="review">"Очень тёплый и продуктивный подход — ребёнок начал говорить по-английски через месяц." — Марина</div>
+        <div class="review">"Понравились игровые методы и чёткие цели на каждом занятии." — Олег</div>
+      </div>
+
+      <div class="card" id="contact">
+        <h3>Контакты</h3>
+        <p>Эл. почта: <a href="mailto:elvira@example.com">elminga@yandex.ru</a></p>
+        <p>Телефон: +372 555 1234</p>
+        <h4 id="signup">Записаться на пробный урок</h4>
+        <form onsubmit="event.preventDefault();alert('Спасибо! Мы свяжемся с вами.');">
+          <div style="display:flex;gap:8px;margin-bottom:8px"><input required placeholder="Имя" style="flex:1;padding:8px;border-radius:8px;border:1px solid #eee"><input required placeholder="Телефон" style="flex:1;padding:8px;border-radius:8px;border:1px solid #eee"></div>
+          <textarea placeholder="Коротко о цели" style="width:100%;padding:8px;border-radius:8px;border:1px solid #eee"></textarea>
+          <div style="margin-top:8px"><button type="submit" class="play">Отправить</button></div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div style="max-width:900px;margin:0 auto">© 2025 Эльвира — преподаватель английского и китайского.</div>
+    </footer>
+  </main>
+
+  <script>
+    // SLOT logic — always win, one use per browser via localStorage
+    const spinBtn = document.getElementById('spinBtn');
+    const claimBtn = document.getElementById('claimBtn');
+    const reels = [document.getElementById('reel1'), document.getElementById('reel2'), document.getElementById('reel3')];
+    const resultText = document.getElementById('resultText');
+
+    const prizes = [
+      {emoji:'🎉', title:'Скидка на первый месяц 10%', id:'first_month_10'},
+      {emoji:'🎁', title:'Бесплатный урок', id:'free_lesson'},
+      {emoji:'🏷️', title:'Скидка на курс 10%', id:'course_10'},
+      {emoji:'📘', title:'Подарочный метод. материал (PDF)', id:'pdf_gift'},
+      {emoji:'🌟', title:'Месяц доступа к мини-курсу', id:'mini_course_month'}
+    ];
+
+    const allEmojis = ['🎉','🎁','🏷️','📘','🌟','📚','⭐','🏆','👑','🎈'];
+
+    function canPlay(){
+      return !localStorage.getItem('slotPlayed');
+    }
+
+    function setPlayed(prize){
+      localStorage.setItem('slotPlayed', JSON.stringify({prize:prize, at: new Date().toISOString()}));
+      updateUIAfterPlay();
+    }
+
+    function updateUIAfterPlay(){
+      if(!canPlay()){
+        spinBtn.classList.add('disabled');
+        claimBtn.classList.remove('disabled');
+        claimBtn.disabled = false;
+        const data = JSON.parse(localStorage.getItem('slotPlayed'));
+        resultText.textContent = 'Вы уже играли и выиграли: ' + data.prize.title;
+        claimBtn.dataset.prize = data.prize.id;
+      } else {
+        spinBtn.classList.remove('disabled');
+        claimBtn.classList.add('disabled');
+        claimBtn.disabled = true;
+      }
+    }
+
+    function spinAnimation(finalEmoji){
+      // animate reels quickly then stop on finalEmoji
+      const spins = [50, 60, 70];
+      reels.forEach((r,i)=>{
+        let count = 0;
+        const interval = setInterval(()=>{
+          r.textContent = allEmojis[Math.floor(Math.random()*allEmojis.length)];
+          count++;
+          if(count>spins[i]){
+            clearInterval(interval);
+            r.textContent = finalEmoji;
+          }
+        }, 20 + i*20);
+      });
+    }
+
+    spinBtn.addEventListener('click', ()=>{
+      if(!canPlay()) return alert('Слот можно использовать только один раз с этого браузера.');
+      // pick a random prize (guaranteed win)
+      const prize = prizes[Math.floor(Math.random()*prizes.length)];
+      // animate
+      resultText.textContent = 'Крутится...';
+      spinBtn.classList.add('disabled');
+      spinBtn.disabled = true;
+
+      // Simple suspense before final
+      spinAnimation(prize.emoji);
+
+      setTimeout(()=>{
+        resultText.textContent = 'Поздравляем! Вы выиграли: ' + prize.title;
+        claimBtn.classList.remove('disabled');
+        claimBtn.disabled = false;
+        claimBtn.dataset.prize = prize.id;
+        // lock play
+        setPlayed(prize);
+      }, 2200);
+    });
+
+    claimBtn.addEventListener('click', ()=>{
+      const data = JSON.parse(localStorage.getItem('slotPlayed'));
+      if(!data) return alert('Сначала сыграйте.');
+      // Open mailto with prize info to claim
+      const subject = encodeURIComponent('Я хочу получить мой приз: ' + data.prize.title);
+      const body = encodeURIComponent('Здравствуйте,\n\nЯ выиграл(а) в слоте на сайте и хочу воспользоваться призом: "' + data.prize.title + '".\nМой email/телефон: ...\n\nСпасибо!');
+      window.location.href = 'mailto:elvira@example.com?subject='+subject+'&body='+body;
+      // after clicking, disable claim button
+      claimBtn.classList.add('disabled');
+      claimBtn.disabled = true;
+    });
+
+    // initialize UI
+    updateUIAfterPlay();
+
+    // allow placing a real photo by setting image src in dev tools or replacing <img src="...">
+    (function(){
+      const img = document.getElementById('teacher-photo');
+      const ph = document.getElementById('photo-placeholder');
+      if(img.src && img.src.trim() !== ''){
+        ph.style.display='none'; img.style.display='block';
+      }
+    })();
+  </script>
+</body>
+</html>
